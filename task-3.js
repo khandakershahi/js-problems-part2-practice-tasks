@@ -9,21 +9,25 @@ Your task is to calculate the `total budget` required to buy electronics:
 Write a JavaScript function named `calculateElectronicsBudget` that takes in the number of `laptop, tablets, and mobile` and returns the `total money required`.
  */
 
-const electronics = [
-    {name: 'laptop', price: 35000, quantity: 2},
-    {name: 'tablet', price: 15000, quantity: 3},
-    {name: 'mobile', price: 20000, quantity: 5}
-   
-]
+/**
+ * laptop price --> 35000
+ * tablet price --> 15000
+ * mobile price --> 20000
+ */
 
+function calculateElectronicsBudget(laptopQuantity, tabletQuantity, mobileQuantity) {
+    const laptopPrice = 35000;
+    const tabletPrice = 15000;
+    const mobilePrice = 20000;
 
-function calculateElectronicsBudget(electronics){
-    let sum = 0;
-    for (const product of electronics) {
-        sum += product.price * product.quantity;
-    }
-    return sum;
+    const laptopCost = laptopQuantity * laptopPrice;
+    const tabletCost = tabletQuantity * tabletPrice;
+    const mobileCost = mobileQuantity * mobilePrice;
+
+    const totalCost = laptopCost + tabletCost + mobileCost;
+
+    return totalCost;
 }
 
-const totalcost = calculateElectronicsBudget(electronics);
-console.log('cost is ', totalcost);
+const total = calculateElectronicsBudget(2, 3, 5);
+console.log('Total cost is:', total);
